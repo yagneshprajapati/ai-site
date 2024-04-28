@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Omnisys - Smart Assistants for Efficient Work</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS -->
+    <style>
+        /* Custom CSS */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0 ;
+            padding: 0;
+            color: #333;
+            
+        }
+
+        .navbar {
+          background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            backdrop-filter: blur(10px); /* Blur effect */
+            width: 100%;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+   z-index: 1000;
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px ;
+}
+
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin-right: 20px;
+
+        }
+
+        .navbar li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #1abc9c;
+            text-decoration: none;
+        }
+
+        .navbar span.logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #1abc9c;
+            margin-left: 20px;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh; /* Adjusted height */
+            text-align: center;
+            color: #ffffff;
+            background-image: url("a.png");
+            background-size: cover;
+            background-position: center;
+            padding: 20px 50px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-weight: bold;
+            color: #1abc9c;
+        }
+
+        .products {
+            
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 50px 50px;
+            background-color: #ffffff;
+            gap: 7px;
+        }
+
+        .product-card {
+    width: calc(18% - -28px);
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 32px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-card p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .product-card button {
+            background-color: #1abc9c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-card button:hover {
+            background-color: #16a085;
+        }
+
+        .case-studies-contact {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            width: 100%;
+            padding: 50px 0;
+            background-color: #ffffff;
+        }
+
+        .case-studies {
+            width: 45%;
+            padding: 0 20px;
+        }
+
+        .case-studies h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .case-studies p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .case-studies a {
+            color: #1abc9c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .case-studies a:hover {
+            color: #16a085;
+        }
+
+        .contact-blog {
+            width: 45%;
+            padding: 0 20px;
+        }
+
+        .contact-blog h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .contact-blog p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .contact-blog p:last-child {
+            margin-bottom: 10px;
+        }
+
+        .contact-blog a {
+            color: #1abc9c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .contact-blog a:hover {
+            color: #16a085;
+        }
+
+        .footer {
+            background-color: #f9f9f9;
+            color: #666;
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #1abc9c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #16a085;
+        }
+
+        .footer .icons {
+            margin-top: 20px;
+        }
+
+        .footer .icons a {
+            margin: 0 10px;
+            font-size: 1.5em;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .footer .icons a:hover {
+            color: #1abc9c;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <span class="logo">Al Omnisys</span>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li>
+        </ul>
+    </header>
+
+    <section class="hero">
+        <h1>View, Think, Decide, Leave the Rest to Al Omnisys</h1>
+        <p>Develops simple tools that empower you to work smarter. Our smart assistants take care of data entry and data collation across software tools. You can now initiate or execute processes spread out across tools, or review data across different spreadsheets and reports in a single screen or your email or preferred chat application.</p>
+        <p class="tagline">Whether you are a small business owner or have hundreds reporting to you, we can help you do more, faster.</p>
+    </section>
+
+    <section class="products">
+        <h2 style="width: 100%; text-align: center; margin-bottom: 40px;">Our Products</h2>
+        <div class="product-card">
+            <h2>AP Aide</h2>
+            <p>Get summaries on every invoice with a PO comparison, potential issues and much more in your inbox with buttons to triccor noxt -tons.</p>
+            <button>Try Now</button>
+        </div>
+        <div class="product-card">
+            <h2>AR Aide</h2>
+            <p>Create and send invoices with a single click by approving draft invoices from the AR Aide in your inbox. Automate follow-up omails.</p>
+            <button>Try Now</button>
+        </div>
+        <div class="product-card">
+            <h2>Contract Tracker</h2>
+            <p>Get email alerts on contract milestones, potential contraventions and more in your inbox.</p>
+            <button>Try Now</button>
+        </div>
+        <div class="product-card">
+            <h2>Procurement Buddy</h2>
+            <p>Turn minimal inputs into comprehensive requirements for potential suppliers.</p>
+            <button>Try Now</button>
+        </div>
+    </section>
+
+    <section class="case-studies-contact">
+        <div class="case-studies">
+            <h2>Case Studies</h2>
+            <p>Description of case studies here... <a href="#">Read More</a></p>
+        </div>
+        <div class="contact-blog">
+            <h2>Contact Us & Blog</h2>
+            <p>Shabbir's Profile</p>
+            <p>Phone Number •</p>
+            <p>Sales Email ID •</p>
+            <p>PRNision Content Links (Upto 3)</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 Al Omnisys. All rights reserved.</p>
+
+    </footer>
+</body>
+</html>
